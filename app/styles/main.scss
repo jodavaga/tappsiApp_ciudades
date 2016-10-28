@@ -78,6 +78,13 @@ body {
     height: 500px;
   }
 
+  #mapid{
+    height: 500px;
+    width: 100%;
+    border: 1px solid red;
+    display: block;
+  }
+
   .controls {
   margin-top: 10px;
   border: 1px solid transparent;
