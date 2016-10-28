@@ -1,0 +1,17 @@
+[
+	{name:'Cali', 
+	country:'Colombia'
+	},
+	{name:'Bogotá', 
+	country:'Colombia'
+	},
+	{name:'Medellín', 
+	country:'Colombia'
+	},
+	{name:'Paris', 
+	country:'Francia'
+	},
+	{name:'Londres', 
+	country:'Reino Unido'
+	}
+]

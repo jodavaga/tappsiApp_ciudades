@@ -9,6 +9,10 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
 
+    <link rel='stylesheet' href='/bower_components/leaflet/dist/leaflet.css' />
+    <link rel='stylesheet' href='/bower_components/angular-google-places-autocomplete/src/autocomplete.css' />
+    <link rel='stylesheet' href='/bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css' />
+
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -22,12 +26,12 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body ng-controller="mainController">
+  <body>
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="container">
+    <div class="container" >
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="#">Home</a></li>
@@ -35,35 +39,29 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <h3 class="text-muted">primerYO</h3>
+      </div><!-- END: header -->
+
+      <div class="jumbotron"> 
+
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+         <div id="map"></div>
+
       </div>
 
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
+      <div class="row marketing" ng-controller="mainController">
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <input type="text" placeholder="¿Ciudad a visitar?" ng-model="newCity">
-          <input type="text" placeholder="¿En que pais?" ng-model="newCountry">
-
-          <input type="button" value="Agregar" ng-click="AddCity()">
+        <div ng-view>
+          
         </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <h3>Ciudades que quiero visitar</h3>
-            <input type="text" ng-model="query">
-            <li ng-repeat="city in cities | filter:query">{{city.name}} - {{city.country}}</li>
-            
-          </div>
-        </div>
-      </div>
+
+      </div> 
+
+
 
       <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <p>Tappsi ciudadesApp</p>
       </div>
-    </div>
+    </div><!-- END: Container -->
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -95,10 +93,23 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+
     <script src="scripts/main.js"></script>
+
+    <script src="/bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+
     <!-- endbuild -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC11ICicEqLMP9p9oRBXKu_R_hdMxgD9K0&libraries=places&signed_in=true&callback=initMap"
+        async defer></script>
+    <script src="scripts/placesScript.js"></script>
+    
+    
   </body>
 </html>

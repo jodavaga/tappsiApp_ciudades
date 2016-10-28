@@ -1,0 +1,11 @@
+<div class="col-lg-12" >
+
+	<h3>Ciudades que quiero visitar</h3>
+	<input type="text" ng-model="query">
+	<li ng-repeat="city in cities | filter:query">{{city.name}} - {{city.country | uppercase}}</li>	
+
+</div>
+
+<a href="#/agregarCiudad">Agregar otra ciudad</a>
+
+
